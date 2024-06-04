@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MealMinder</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="screen1">Welcome to MealMinder</string>
+    <string name="screen2">Easy Calorie Counting</string>
+    <string name="screen3">Never Miss a Meal</string>
+    <string name="screen1desc">Welcome to MealMinder! We are here to help you manage your meals
+        and track your calories effortlessly.</string>
+    <string name="screen2desc">Simply take a photo of your meal, and MealMinder will automatically
+        calculate the calories for you.</string>
+    <string name="screen3desc">Schedule reminders for your meals to ensure you eat regularly
+        and maintain a balanced diet.</string>
+    <string-array name="meal_types">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+    </string-array>
+</resources>

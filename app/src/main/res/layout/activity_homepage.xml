@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF7E4"
+    tools:context=".homepage">
+
+    <Button
+        android:id="@+id/buttonTambah"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/btn_pink"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/baseline_add_24" />
+
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_above="@+id/buttonTambah"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_pink"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:icon="@drawable/baseline_photo_camera_24" />
+
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/viewheader"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="#fcc5ae"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Hello Robin!"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="@font/poppins_semibold"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/textTitle"
+        android:layout_alignParentTop="@+id/textTitle"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="-11dp"
+        android:src="@drawable/round_account_circle_24"
+        android:tint="#ffffff" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/viewheader"
+        android:layout_alignBottom="@+id/viewheader"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="-80dp"
+        android:background="@color/white"
+        android:radius="16dp">
+
+        <android.widget.LinearLayout
+            android:id="@+id/lineartanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturday, 23 March 2024"
+                android:textSize="20dp"
+                android:textColor="#e7826f"
+                android:fontFamily="@font/poppins_medium"/>
+
+        </android.widget.LinearLayout>
+
+        <android.widget.RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:layout_below="@id/lineartanggal">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/gambarkalori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textDate"
+                android:progress="25"
+                app:indicatorColor="#c4d07c"
+                app:indicatorSize="65dp"
+                app:trackColor="#e9eec7"
+                app:trackCornerRadius="3dp"
+                app:trackThickness="10dp"
+                android:layout_alignParentBottom="true"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/gambarmenu"
+                android:layout_width="72dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_restaurant_menu_24"
+                android:tint="#c4d07c"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunch"
+                android:textColor="#e9eec7"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="1/4"
+                android:textColor="#c4d07c"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45mnt"
+                android:textColor="#c4d07c"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/poppins_medium"/>
+
+        </android.widget.RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/cardHeader"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="-218dp"
+        android:background="@color/white_edgar"
+        android:radius="20dp"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <android.widget.RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/sarapan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Breakfast"
+                    android:textColor="#e7826f"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/kaloritotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="367/2150 kkal"
+                    android:textColor="#e7826f"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sarapanmenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sarapan"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Nasi Goreng"
+                    android:textColor="#c4d07c"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/sarapankalori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sarapanmenu"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="367kkal"
+                    android:textColor="#c4d07c"
+                    android:textSize="16dp" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="40dp"
+                    android:layout_height="36dp"
+                    android:layout_above="@+id/buttonTambah"
+                    android:layout_alignStart="@+id/kaloritotal"
+                    android:layout_alignEnd="@+id/kaloritotal"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginBottom="26dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:onClick="onImageButtonClick"
+                    app:srcCompat="@drawable/baseline_photo_camera_24" />
+
+            </android.widget.RelativeLayout>
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cardHeader"
+        android:layout_marginTop="100dp" />
+</RelativeLayout>

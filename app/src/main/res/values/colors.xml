@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lavender">#E6E6FA</color>
+
+    <color name="colorPrimary">#37474F</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#00BCD4</color>
+    <color name="colorPrimaryy">#0F9D58</color> //nih sama dari picker
+    <color name="colorPrimaryDarkk">#0F4C2E</color> //picker
+    <color name="colorAccentt">#9D0F9B</color> //picker
+
+    <color name="f">#F5542D</color>
+    <color name="s">#0F9D58</color>
+    <color name="t">#FF1744</color>
+    <color name="four">#019BF0</color>
+    <color name="white_edgar">#b3ffffff</color>
+
+    <color name="earthpaint_1_16_2_sonata">#E9EEC7</color>
+    <color name="pantone_7492_cp">#C4D07C</color>
+    <color name="pantone_bleached_apricot">#FCC5AE</color>
+    <color name="cosmic_coral">#E7826F</color>
+    <color name="peach_puff">#FFDAB9</color>
+</resources>

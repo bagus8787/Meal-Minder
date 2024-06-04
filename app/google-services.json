@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "303445882644",
+    "project_id": "mealminder-9e395",
+    "storage_bucket": "mealminder-9e395.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303445882644:android:eb8b6ac385106c1becb401",
+        "android_client_info": {
+          "package_name": "com.example.MealMinder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArSZZBW-5qhpOlLpR0MuEyWc9KDLh6IVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
