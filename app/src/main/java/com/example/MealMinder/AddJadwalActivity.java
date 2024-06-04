@@ -69,8 +69,6 @@ public class AddJadwalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-
                 MealData.setMealData(AddJadwalActivity.this,spinnerSelection(),deskripsi.getText().toString(),hari,tanggal,bulan,waktu);
                 AlarmManager alarmMgr;
                 PendingIntent alarmIntent;
