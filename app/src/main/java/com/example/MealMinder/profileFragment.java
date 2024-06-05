@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.MealMinder.fragment.HomePageFragment;
+import com.example.MealMinder.helper.SessionManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -70,6 +72,8 @@ public class profileFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.activity_profile, container, false);
 
+        SessionManager sessionManager = new SessionManager(requireContext());
+
         Button btnLogout = rootView.findViewById(R.id.buttonLogout);
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,10 @@ public class profileFragment extends Fragment {
                 final FirebaseAuth mAuth;
                 mAuth = FirebaseAuth.getInstance();
                 mAuth.signOut();
+
+                sessionManager.setNameUser("");
+                sessionManager.setNoUser("");
+                sessionManager.setTanggalLahir("");
 
                 Intent intent = new Intent(requireContext(), IntroActivity.class);
                 startActivity(intent);
@@ -93,12 +101,29 @@ public class profileFragment extends Fragment {
             }
         });
 
+        ImageView imgEdit = rootView.findViewById(R.id.imgEdit);
+        imgEdit.setOnClickListener(V->{
+            Intent intent = new Intent(requireContext(), EditProfileActivity.class);
+            startActivity(intent);
+        });
+
+        TextView textView_show_full_name = rootView.findViewById(R.id.textView_show_full_name);
+        TextView textView_show_email = rootView.findViewById(R.id.textView_show_email);
+
+        TextView tglLahir = rootView.findViewById(R.id.textView16);
+        TextView phone = rootView.findViewById(R.id.textView18);
+
+        textView_show_full_name.setText(sessionManager.getNamaUser());
+        tglLahir.setText(sessionManager.getTanggalLahir());
+        phone.setText(sessionManager.getNoUser());
 
         FirebaseUser mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (mCurrentUser != null) {
             TextView tvEmail = rootView.findViewById(R.id.textView12);
             tvEmail.setText(mCurrentUser.getEmail().toString());
+            textView_show_email.setText(mCurrentUser.getEmail().toString());
         }
+
 
         return rootView;
     }

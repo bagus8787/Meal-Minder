@@ -1,7 +1,9 @@
 package com.example.MealMinder.fragment;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -10,22 +12,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
-import android.Manifest;
-import android.content.pm.PackageManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.MealMinder.AddJadwalActivity;
 import com.example.MealMinder.R;
 import com.example.MealMinder.adapter.HomeAdapter;
+import com.example.MealMinder.helper.SessionManager;
 import com.example.MealMinder.model.MealData;
 
 public class HomePageFragment extends Fragment {
@@ -47,6 +47,11 @@ public class HomePageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_homepage, container, false);
+
+        SessionManager sessionManager = new SessionManager(requireContext());
+
+        TextView textTitle = rootView.findViewById(R.id.textTitle);
+        textTitle.setText("Hello " + sessionManager.getNamaUser() + "!");
 
         ImageButton imageButton = rootView.findViewById(R.id.imageButton);
 
