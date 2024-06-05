@@ -7,6 +7,8 @@ import android.app.NotificationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 
 import com.example.MealMinder.fragment.AddJadwalFragment;
@@ -14,6 +16,8 @@ import com.example.MealMinder.fragment.HomePageFragment;
 import com.example.MealMinder.fragment.RekapMakananFragment;
 import com.example.MealMinder.model.MealData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -44,6 +48,11 @@ public class MainLayout extends AppCompatActivity
         int selectedFragment = getIntent().getIntExtra("selectedFragment", R.id.home);
         bottomNavigationView.setSelectedItemId(selectedFragment);
 
+
+        FirebaseUser mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (mCurrentUser != null) {
+//            Toast.makeText(this, "user login == " + mCurrentUser.getEmail() + ", " + mCurrentUser.getPhoneNumber() + " ," + mCurrentUser.getUid(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void createNotificationChannel()

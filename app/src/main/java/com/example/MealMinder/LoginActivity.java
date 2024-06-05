@@ -13,9 +13,11 @@ import android.widget.Toast;
 import com.example.MealMinder.databinding.ActivityLoginBinding;
 import com.example.MealMinder.model.MealData;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
@@ -31,6 +33,10 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
     private ProgressDialog progressDialog;
+
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
+    FirebaseUser user;
 
     private static final String TAG = "LoginActivity";
 
@@ -70,14 +76,14 @@ public class LoginActivity extends AppCompatActivity {
 
                     // Attempt to sign in with Firebase Auth
                     auth.signInWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    // Log the completion of the task
-                                    Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+                            .addOnCompleteListener(task -> {
+                                // Log the completion of the task
+                                Log.d(TAG, "signInWithEmail:onComplete:" + task.getResult().getUser().getEmail());
 
-                                    // Dismiss progress dialog
-                                    progressDialog.dismiss();
+                                user = task.getResult().getUser();
+
+                                // Dismiss progress dialog
+                                progressDialog.dismiss();
 
                                     if (task.isSuccessful()) {
                                         startActivity(new Intent(LoginActivity.this, MainLayout.class));
@@ -88,8 +94,8 @@ public class LoginActivity extends AppCompatActivity {
                                         // Show error message on failure
                                         Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                     }
-                                }
-                            });
+                            }
+                            );
                 }
             }
         });
@@ -104,4 +110,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        auth.addAuthStateListener(mAuthListener);
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        if (mAuthListener != null) {
+//            auth.removeAuthStateListener(mAuthListener);
+//        }
+//    }
 }

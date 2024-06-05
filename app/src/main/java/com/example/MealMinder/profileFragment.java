@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.MealMinder.fragment.HomePageFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 /**
@@ -73,6 +75,10 @@ public class profileFragment extends Fragment {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final FirebaseAuth mAuth;
+                mAuth = FirebaseAuth.getInstance();
+                mAuth.signOut();
+
                 Intent intent = new Intent(requireContext(), IntroActivity.class);
                 startActivity(intent);
             }
@@ -86,6 +92,13 @@ public class profileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+        FirebaseUser mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (mCurrentUser != null) {
+            TextView tvEmail = rootView.findViewById(R.id.textView12);
+            tvEmail.setText(mCurrentUser.getEmail().toString());
+        }
 
         return rootView;
     }
