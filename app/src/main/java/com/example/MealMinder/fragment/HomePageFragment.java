@@ -28,12 +28,19 @@ import com.example.MealMinder.adapter.HomeAdapter;
 import com.example.MealMinder.helper.SessionManager;
 import com.example.MealMinder.model.MealData;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class HomePageFragment extends Fragment {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_PICK_IMAGE = 2;
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 101;
     private static final int STORAGE_PERMISSION_REQUEST_CODE = 102;
     private RecyclerView rv;
+    TextView txtDateTime;
 
     public HomePageFragment() {
         // Required empty public constructor
@@ -56,6 +63,14 @@ public class HomePageFragment extends Fragment {
         ImageButton imageButton = rootView.findViewById(R.id.imageButton);
 
         rv = rootView.findViewById(R.id.recycler);
+
+        TextView txtDateTime = rootView.findViewById(R.id.textDate);
+
+        String dateTimeFormat = "EEEE, d MMMM yyyy hh:mm a";
+        Date date = Calendar.getInstance().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat(dateTimeFormat, Locale.ENGLISH);
+        String formattedDate = sdf.format(date);
+        txtDateTime.setText(formattedDate);
 
         Button btnSearch = rootView.findViewById(R.id.buttonTambah);
 

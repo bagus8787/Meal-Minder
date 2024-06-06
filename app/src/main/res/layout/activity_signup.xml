@@ -56,6 +56,7 @@
             android:hint="Username"
             android:inputType="textPersonName"
             android:paddingStart="20dp"
+            android:textColor="#464646"
             android:textColorHint="#464646"
             android:fontFamily="@font/poppins_light"
             android:textStyle="bold"/>
@@ -73,6 +74,7 @@
             android:hint="Email"
             android:inputType="textPersonName"
             android:paddingStart="20dp"
+            android:textColor="#464646"
             android:textColorHint="#464646"
             android:fontFamily="@font/poppins_light"
             android:textStyle="bold"/>
@@ -89,6 +91,7 @@
             android:hint="Password"
             android:inputType="textPersonName"
             android:paddingStart="20dp"
+            android:textColor="#464646"
             android:textColorHint="#464646"
             android:fontFamily="@font/poppins_light"
             android:textStyle="bold"/>

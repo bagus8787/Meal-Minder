@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#e7826f"
-                android:text="Nama lengkap"/>
+                android:text="Full Name"/>
 
             <EditText
                 android:id="@+id/edtName"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="#e7826f"
-                android:text="Nomor Telepon"/>
+                android:text="Phone"/>
 
             <EditText
                 android:id="@+id/edtNomorTelepon"
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:textColor="#e7826f"
-                android:text="Tanggal lahir"/>
+                android:text="Birthday"/>
 
             <EditText
                 android:id="@+id/edtTglLahir"
@@ -110,7 +110,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_background1"
-                android:text="Simpan"/>
+                android:text="Save"/>
 
         </LinearLayout>
 

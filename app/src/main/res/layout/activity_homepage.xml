@@ -71,8 +71,6 @@
         android:id="@+id/imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignBottom="@+id/textTitle"
-        android:layout_alignParentTop="@+id/textTitle"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="14dp"
@@ -105,76 +103,25 @@
                 android:id="@+id/textDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saturday, 23 March 2024"
-                android:textSize="20dp"
+                android:textSize="16sp"
                 android:textColor="#e7826f"
-                android:fontFamily="@font/poppins_medium"/>
+                android:fontFamily="@font/poppins_medium"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="center" />
 
         </android.widget.LinearLayout>
 
         <android.widget.RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="25dp"
             android:layout_below="@id/lineartanggal">
 
-            <com.google.android.material.progressindicator.CircularProgressIndicator
-                android:id="@+id/gambarkalori"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textDate"
-                android:progress="25"
-                app:indicatorColor="#c4d07c"
-                app:indicatorSize="65dp"
-                app:trackColor="#e9eec7"
-                app:trackCornerRadius="3dp"
-                app:trackThickness="10dp"
-                android:layout_alignParentBottom="true"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/gambarmenu"
-                android:layout_width="72dp"
-                android:layout_height="50dp"
-                android:src="@drawable/baseline_restaurant_menu_24"
-                android:tint="#c4d07c"
-                android:layout_centerInParent="true"/>
-
-            <TextView
-                android:id="@+id/next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lunch"
-                android:textColor="#e9eec7"
-                android:textSize="24dp"
-                android:textStyle="bold"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/poppins_medium"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginBottom="11dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="1/4"
-                android:textColor="#c4d07c"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="45mnt"
-                android:textColor="#c4d07c"
-                android:textSize="23sp"
-                android:textStyle="bold"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:fontFamily="@font/poppins_medium"/>
+                android:layout_height="match_parent"
+                android:src="@drawable/remember_eattoday"
+                android:layout_marginTop="35dp"
+                android:layout_gravity="center" />
 
         </android.widget.RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
