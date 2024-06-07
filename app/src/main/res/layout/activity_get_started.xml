@@ -10,13 +10,13 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:scaleType="centerCrop"
         android:src="@drawable/plandiagram"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/screen1"
         android:textAlignment="center"

@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.MealMinder.databinding.ActivitySignupBinding;
@@ -22,13 +24,23 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     ProgressDialog progressDialog;
 
+    ImageButton backintroButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
 
         binding = ActivitySignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        backintroButton = findViewById(R.id.backonboarding);
+        backintroButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(), IntroActivity.class);
+                startActivity(i);
+            }
+        });
 
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();

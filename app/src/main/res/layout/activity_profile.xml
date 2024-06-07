@@ -233,6 +233,53 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp">
+
+                <ImageView
+                    android:id="@+id/imageLocation"
+                    android:layout_width="41dp"
+                    android:layout_height="28dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/baseline_location_on_24" />
+
+                <TextView
+                    android:id="@+id/textLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Address"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#e7826f"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageLocation"
+                    app:layout_constraintStart_toEndOf="@+id/imageLocation"
+                    app:layout_constraintTop_toTopOf="@+id/imageLocation"/>
+
+                <TextView
+                    android:id="@+id/textViewLocLoad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="54dp"
+                    android:textSize="16sp"
+                    android:text="Set Addres"
+                    android:textColor="#e7826f"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/textLocation"
+                    app:layout_constraintStart_toEndOf="@+id/textLocation"
+                    app:layout_constraintTop_toTopOf="@+id/textLocation"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <Button
                 android:id="@+id/buttonLogout"

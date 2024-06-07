@@ -18,7 +18,7 @@
         android:id="@+id/sliderTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/screen1"
         android:textAlignment="center"
@@ -35,5 +35,5 @@
         android:layout_marginTop="20dp"
         android:textAlignment="center"
         android:textColor="@color/cosmic_coral"
-        android:textSize="20sp"/>
+        android:textSize="15sp"/>
 </LinearLayout>

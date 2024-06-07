@@ -101,6 +101,15 @@ public class profileFragment extends Fragment {
             }
         });
 
+        TextView setLocation = rootView.findViewById(R.id.textViewLocLoad);
+        setLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(requireContext(), GmapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageView imgEdit = rootView.findViewById(R.id.imgEdit);
         imgEdit.setOnClickListener(V->{
             Intent intent = new Intent(requireContext(), EditProfileActivity.class);
