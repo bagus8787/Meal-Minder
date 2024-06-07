@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.MealMinder.databinding.ActivityLoginBinding;
@@ -38,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseUser user;
 
+    ImageButton backtointroButton;
+
     private static final String TAG = "LoginActivity";
 
     @Override
@@ -47,6 +50,15 @@ public class LoginActivity extends AppCompatActivity {
         // Initialize binding
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        backtointroButton = findViewById(R.id.backtoboarding);
+        backtointroButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(view.getContext(), IntroActivity.class);
+                startActivity(i);
+            }
+        });
 
         // Initialize Firebase instances
         firestore = FirebaseFirestore.getInstance();
